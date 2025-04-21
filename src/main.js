@@ -5,13 +5,13 @@ import './style.css'
 const value = '192.168.1.8';
 const [ipv4, port] = value.split(':');
 const konomiHost = `${ipv4.replaceAll('.', '-')}.local.konomi.tv:${port ?? 7000}`;
-const apiBaseUrl = `https://${konomiHost}/api/`;
+const apiBaseUrl = `https://${konomiHost}/api`;
 
 let total = Infinity;
 let programs = [];
 
 for (let index = 1; index <= total / 100; index++) {
-    const data = await fetch(`${apiBaseUrl}videos?page=${index}`).then(res => res.json());
+    const data = await fetch(`${apiBaseUrl}/videos?page=${index}`).then(res => res.json());
     if (data.total === 0) {
         break;
     }
