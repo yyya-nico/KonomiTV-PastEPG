@@ -10,7 +10,7 @@ const apiBaseUrl = `https://${konomiHost}/api`;
 let total = Infinity;
 let programs = [];
 
-for (let index = 1; index <= total / 100; index++) {
+for (let index = 1; index <= total / 30; index++) {
     const data = await fetch(`${apiBaseUrl}/videos?page=${index}`).then(res => res.json());
     if (data.total === 0) {
         break;
