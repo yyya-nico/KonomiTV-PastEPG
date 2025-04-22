@@ -49,7 +49,7 @@ timeLabels.forEach(time => {
     const timeDiv = document.createElement('div');
     timeDiv.className = 'time-label';
     if (time.getHours() === 0) {
-        timeDiv.innerText = `${time.toLocaleString([], { month: 'numeric', day: 'numeric', weekday: 'short', hour: 'numeric' })}`;
+        timeDiv.textContent = time.toLocaleString([], { month: 'numeric', day: 'numeric', weekday: 'short', hour: 'numeric' });
     } else {
         timeDiv.textContent = time.toLocaleTimeString([], { hour: 'numeric' });
     }
